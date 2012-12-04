@@ -1,31 +1,208 @@
 <!DOCTYPE html>
-<html>
+
 <head>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>
-	$(document).ready(function(){
-		$('i.noun_project_865').html('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "></polygon></g></svg>');
-	});
-	</script>
-	<script>
-	function setNP() {
-		document.getElementById('noun_project_865').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "></polygon></g></svg>';
-	}
-	</script>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>cleanSVG</title>
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <script>
+  $(document).ready(function(){
+    var noun_project_865 = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" class="icon" enable-background="new 0 0 100 100" xml:space="preserve"><g><polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "></polygon></g></svg>'
+    $('.noun_project_865').html(noun_project_865);
+  });
+  </script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    html {
+      background: #f4f4f4;
+    }
+    .demo1:hover {
+      fill: gold;
+    }
+    .demo2:hover {
+      fill: none;
+      stroke: gold;
+    }
+    .demo3 svg{
+      width: 170px;
+    }
+    .demo3:hover svg {
+      width: 100px;
+      fill: gold;
+    }
+    .noun_project_865:hover {
+      fill: gold;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
 
 </head>
-<body onLoad="setNP()">
-	<p>static image: <img src="noun_project_865.svg" /></p>
-	<p>manual embed: <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<g>
-	<polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "></polygon>
-</g>
-</svg></p>
-	<p>dynamic (jQuery) embed: <i class="noun_project_865"></i></p>
-	<p>dynamic (javascript) embed: <i id="noun_project_865"></i></p>
-	<p>css psuedo class embed: <span class="noun_project_865">(research mode)</span></p>
-	<h5>Lightning Icon via:<a href="http://thenounproject.com/noun/lightning/#icon-No865">Matthew Hock, from The Noun Project</h5>
-	<p><b>Why?</b>Because using a <pre>< svg ></pre> means you can style awesome <pre>:hover</pre> effects. Because lots of svg's in your html code look ugly. Because why not?</p>
-	<p><a href="https://github.com/crismanNoble/cleanSVG">See the repo more more info</a></p>
+<body>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h2>cleanSVG</h2>
+      <p>Keep the code, <strong>lose the clutter.</strong></p>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="eight columns">
+      <h3>TL;DR</h3>
+      <p>You can do this:</p>
+      <i class="noun_project_865"></i>
+      <p>With this:</p>
+      
+      <script src="https://gist.github.com/4199269.js?file=hijackingi.html"></script>
+      
+      <p>Instead of this:</p>
+      
+      <script src="https://gist.github.com/4199265.js?file=svgRaw.html"></script>
+      <br/>
+      <h3>SVG: The Good</h3>
+      <p>These days we hear a lot about icon fonts or css only icons. Don't forget about the mighty SVG, it scales flawlessly, it is cross browser capabable, and at it's root, an SVG is just markup. Don't believe me? Take any .svg file and open it up in your text editor.</p>
+      <img src="images/code.png"/>
+      <p>You can link to an svg with an img tag like so:</p>
+      <div class="columns eight">
+        <script src="https://gist.github.com/4199278.js?file=svgimg.html"></script>
+      </div>
+      <img src="noun_project_865.svg" class="four columns"/>
+      <p>Or you can paste the svg code directly into your document:</p>
+      <div class="columns eight">
+        <script src="https://gist.github.com/4199265.js?file=svgRaw.html"></script>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="four columns" width="200px" height="200px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+        <g>
+          <polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "/>
+        </g>
+      </svg>
+      <p>The reason you might want to put the code straight into your HTML document is because now you can get crazy and style your svg with CSS. Hover over the images below to see what I mean.</p>
+      <svg xmlns="http://www.w3.org/2000/svg" class="four columns demo1" width="200px" height="200px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+        <g>
+          <polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "/>
+        </g>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="four columns demo2" width="200px" height="200px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+        <g>
+          <polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "/>
+        </g>
+      </svg>
+      <div class="four columns demo3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+          <g>
+            <polygon points="35.009,97.063 35.009,97.063 47.875,50.553 25.601,51.904 42.521,7.001 67.758,2.937 49.133,36.511 74.399,33.256     "/>
+          </g>
+        </svg>
+      </div>
+      <p>Just because you can doesn't mean you should, but you can style the svg as a whole, the induvidual layers, the stroke, the fill etc. You can use css or javascript to control the size, you can give them classes and change them all at once. The developer has more control over the size and position. Oh and you don't have to make multiple HTTP requests either. No more sprite sheets, no more imageHover.png mumbo jumbo, no more preloading images, just load the code.</p>
+      <br/>
+      <h3>SVG: The Bad</h3>
+      <p>(((crickets)))</p>
+      <br/>
+      <h3>SVG: The Ugly</h3>
+      <p> There is one issue I have with putting SVG code directly into my HTML document, it makes a mess. Taking SVGs from The Noun Project [2] yields weird tab indenting, extremely long layers, odd SVG headers and other such stuff I don't really want to see every time I make a quick change.</p>
+
+      <h3>cleanSVG: The Concept</h3>
+      <p>What I propose is not to clean those messy SVG's so that I can fold them nicely in Sublime Text 2, but rather take your dirty laundry and shove it under the bed. It will still be a mess when someone hits CNTRL+U, but your not cleaning your room for them anyway.</p>
+      <p>If you want to load in your SVG data as code you basically have two options:
+        <ul>
+          <li>Use Javascript to inject the code.
+          </li>
+          <li>Use the CSS3 :before psuedo class with  {content: "data:image/svg+xml;utf8,< svg..."
+          </li>
+        </ul>
+      </p>
+      <p>I'm going to go with the javascript injection method since :before is not well supported, and it loses all of the advantages of css styling.</p>
+      <p>I think I'm going to follow <a href="http://twitter.github.com/bootstrap/">bootstrap's</a> lead and hijack the i tag. </p><script src="https://gist.github.com/4199269.js?file=hijackingi.html"></script><p>Seems irreverant, but I honestly have used bootstrap so much I forgot that it is meant for italics. With the javascript method you can define the svg code as a string</p><script src="https://gist.github.com/4199245.js?file=SVG data as a js var"></script><p>and inject it like so: </p><script src="https://gist.github.com/4199255.js?file=jQuery html fill"></script><p>Viola! Now that my room is clean I can get on to important things like homework.</p>
+
+    </div>
+
+    <div class="four columns">
+      <h4>About</h4>
+      <p>Just another lazy Sunday project by <a href="http://twitter.com/crisnoble">@crisnoble</a> for <a href="http://mksht.crisnoble.com">mksht</a>.</p>
+      <div class="two columns">
+      <i class="noun_project_865"></i>
+      </div>
+      <div class="ten columns">
+      <p>Lightning Icon via:<a href="http://thenounproject.com/noun/lightning/#icon-No865">Matthew Hock, from The Noun Project</a></p>
+      </div>
+      <p>Built with <a href="http://foundation.zurb.com/">ZURB Foundation</a>, <a href="http://jquery.com">jQuery</a>, <a href="https://gist.github.com/">Gists</a>, and love.</p>
+      <!-- <p><a href="http://mksht.crisnoble.com/cleanSVG">Read more in the blog post...</a></p> -->
+      
+    </div>
+  </div>
+
+ 
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+
+  
+    <script>
+    $(window).load(function(){
+      $("#featured").orbit();
+    });
+    </script> 
+  
 </body>
 </html>
